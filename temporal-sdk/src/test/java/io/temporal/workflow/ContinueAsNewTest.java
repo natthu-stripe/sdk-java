@@ -91,6 +91,14 @@ public class ContinueAsNewTest {
       } else {
         assertEquals(5, Workflow.getInfo().getRetryOptions().getMaximumAttempts());
       }
+
+      // search attributes should be set when ContinueAsNewOptions are set
+      if (count >= INITIAL_COUNT - 1) {
+        assertEquals(0, Workflow.getTypedSearchAttributes().size());
+      } else {
+        assertEquals(1, Workflow.getTypedSearchAttributes().size());
+      }
+
       if (count == 0) {
         assertEquals(continueAsNewTaskQueue, taskQueue);
         return 111;

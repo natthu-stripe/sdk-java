@@ -960,7 +960,8 @@ public final class TestWorkflowService extends WorkflowServiceGrpc.WorkflowServi
             .setWorkflowId(continuedExecutionId.getWorkflowId().getWorkflowId())
             .setWorkflowIdReusePolicy(previousRunStartRequest.getWorkflowIdReusePolicy())
             .setIdentity(identity)
-            .setCronSchedule(previousRunStartRequest.getCronSchedule());
+            .setCronSchedule(previousRunStartRequest.getCronSchedule())
+            .setSearchAttributes(ca.getSearchAttributes());
     // TODO: Service doesn't perform this copy.
     // See https://github.com/temporalio/temporal/issues/5249
     //    if (previousRunStartRequest.hasRetryPolicy()) {

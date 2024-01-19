@@ -956,6 +956,9 @@ class StateMachines {
     } else {
       a.setWorkflowTaskTimeout(sr.getWorkflowTaskTimeout());
     }
+    if (d.hasSearchAttributes()) {
+      a.setSearchAttributes(d.getSearchAttributes());
+    }
     a.setWorkflowTaskCompletedEventId(workflowTaskCompletedEventId);
     a.setBackoffStartInterval(d.getBackoffStartInterval());
     if (d.hasLastCompletionResult()) {
